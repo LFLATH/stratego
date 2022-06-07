@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import  "./index.css"
+import Board from "./Components/Board/Board";
+import LoginHeader from "./Components/LoginHeader/LoginHeader";
+import StartButton from "./Components/StartButton/StartButton";
+import MenuWrapper from "./Components/MenuWrapper/MenuWrapper";
+import GameWrapper from "./Components/GameWrapper/GameWrapper";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App =() => {
+    const [menufinished, changeMenu] = useState(false)
+    return(
+        <>
+            <MenuWrapper>
+                <LoginHeader menufinished={menufinished}/>
+                <StartButton menufinished = {menufinished} menuFunction = {changeMenu} />
+            </MenuWrapper>
+            {menufinished === true ? 
+            <GameWrapper>
+                <Board/> 
+            </GameWrapper>
+            
+            
+            : 
+            
+            null}
+
+        </>
+       
+
+    )
 }
+
+
 
 export default App;
