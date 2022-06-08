@@ -1,22 +1,11 @@
 import React, {useState} from "react";
-import  "./Piece.css"
+import bomb from "/Assets";
 
 
-
-const Piece = ({positionrow, positioncol}) =>{
-    const [type, setType] = useState()
-    const [power, setPower] = useState()
+const Piece = ({positionrow, positioncol, color, type}) =>{
     const [isAlive, setMortality] = useState(true)
-    const [locked, setLock] = useState(false)
-    const [hidden, setHidden] = useState(true)
-    
-    console.log("Row " + positionrow)
-    console.log("Col" + positioncol)
-    console.log(playable)
-
     return(
-        <div className={playable ? "Land" : "Lake"}>
-        </div>            
+            <img className="piece" src={type}/>           
     )
 
 }
