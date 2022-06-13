@@ -27,7 +27,7 @@ const PieceTray = ({piecelist, isRed}) =>{
     );
     return(
         <div className="piecetray">
-            {isRed === true ? redpieces : bluepieces}
+            {redpieces}
         </div>
     )
 
